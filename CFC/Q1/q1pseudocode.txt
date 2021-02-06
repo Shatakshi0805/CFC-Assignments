@@ -1,0 +1,13 @@
+Start
+Declare variable credits
+Take input credits
+if credits>=7500 :
+   print "Tera leader"
+else if credits>=6000 && credits<7500 :
+   print "Gega leader"
+else if credits>=4500 && credits<6000 :
+   print "Mega leader"
+else if credits<4500 :
+   print "Rising star"
+end if
+End

@@ -1,0 +1,6 @@
+Start
+Declare variables amount, rate, time and simpleinterest
+Take input amount, rate, and time
+compute simpleinterest as (amount*rate*time)/100.0
+display simpleinterest
+End
