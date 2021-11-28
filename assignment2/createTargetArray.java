@@ -1,35 +1,19 @@
 package assignment2;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class createTargetArray {
     public static void main(String[] args) {
-        int[] nums = {-7,-3,2,3,11};
-
-        int front = 0;
-        int mid = ((0)+nums.length-1)/2;
-        int end = nums.length-1;
-
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while(end >= mid && front <= mid) {
-            if (Math.abs(nums[front]) <= Math.abs(nums[end])) {
-                list.add(nums[end]*nums[end]);
-                end--;
-            } else if (Math.abs(nums[front]) > Math.abs(nums[end])) {
-                list.add(nums[front] * nums[front]);
-                front++;
-            }
+        int[] target = new int[index.length];
+        Arrays.fill(target, -1);//filling entire target array with -1 instead of 0
+        
+        for (int i = 0; i < index.length; i++) {
+            if (target[index[i]] != -1) {//if any position doesnt contain -1, it means there exists some-- 
+                for (int j = target.length-1; j > index[i]; j--) {//-value other than -1
+                    target[j] = target[j-1];//there maybe a 0 value to store for example nums = {0,1,0} & index = {0,1,0}
+                }//will not work in 1st condn
         }
-//        list.add(end);
-        Collections.sort(list);
-
-        Integer[] arr = new Integer[list.size()];
-        arr = list.toArray(arr);
-
-        for (Integer x : arr) {
-            System.out.print(x + " ");
-        }
+        target[index[i]] = nums[i];
     }
+    System.out.print(Arrays.toString(target));    
+    }
+
 }
